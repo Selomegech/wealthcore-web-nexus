@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -10,79 +9,43 @@ const Industries = () => {
       icon: Building,
       title: "Real Estate & Infrastructure",
       description: "Comprehensive financial solutions for developers, contractors, and infrastructure companies.",
-      services: [
-        "Project financing and structuring",
-        "Joint venture advisory",
-        "Tax planning for real estate transactions",
-        "Regulatory compliance support",
-        "RERA compliance advisory"
-      ],
+      serviceLink: "project-finance",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625"
     },
     {
       icon: Factory,
       title: "Manufacturing & Export",
       description: "Specialized advisory for manufacturing companies and export-oriented businesses.",
-      services: [
-        "Export incentive schemes optimization",
-        "Supply chain financing",
-        "Working capital management",
-        "Transfer pricing advisory",
-        "Technology upgrade financing"
-      ],
+      serviceLink: "corporate-tax",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
     },
     {
       icon: Heart,
       title: "Healthcare & Hospitals",
       description: "Financial expertise tailored for healthcare providers and medical institutions.",
-      services: [
-        "Hospital project financing",
-        "Medical equipment financing",
-        "Healthcare compliance advisory",
-        "Practice valuation services",
-        "Insurance claim optimization"
-      ],
-      image: "https://images.unsplash.com/photo-1500673922987-e212871fec22"
+      serviceLink: "project-finance",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56"
     },
     {
       icon: ShoppingCart,
       title: "Trading & Distribution",
       description: "Strategic solutions for trading companies and distribution networks.",
-      services: [
-        "Inventory financing solutions",
-        "Channel financing programs",
-        "GST optimization strategies",
-        "Multi-state compliance support",
-        "Digital transformation advisory"
-      ],
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+      serviceLink: "corporate-tax",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8"
     },
     {
       icon: Zap,
       title: "Startups & MSMEs",
       description: "Growth-focused financial guidance for emerging businesses and small enterprises.",
-      services: [
-        "Startup funding strategies",
-        "Government scheme optimization",
-        "Business plan development",
-        "Investor readiness advisory",
-        "Compliance framework setup"
-      ],
+      serviceLink: "business-consultancy",
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
     },
     {
       icon: Users,
       title: "Professional Services",
       description: "Tailored solutions for consulting firms, law firms, and other professional service providers.",
-      services: [
-        "Partnership structuring",
-        "Professional indemnity advisory",
-        "Regulatory compliance support",
-        "Practice expansion financing",
-        "Succession planning"
-      ],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+      serviceLink: "business-consultancy",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
     }
   ];
 
@@ -132,25 +95,9 @@ const Industries = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="font-heading font-bold text-xl text-navy mb-3">{industry.title}</h3>
-                    <p className="text-charcoal mb-4 leading-relaxed">{industry.description}</p>
-                    <div className="space-y-2 mb-6">
-                      <h4 className="font-bold text-navy text-sm">Key Services:</h4>
-                      <ul className="space-y-1">
-                        {industry.services.slice(0, 3).map((service, serviceIndex) => (
-                          <li key={serviceIndex} className="text-sm text-charcoal flex items-center">
-                            <div className="w-1.5 h-1.5 bg-orange rounded-full mr-2"></div>
-                            {service}
-                          </li>
-                        ))}
-                        {industry.services.length > 3 && (
-                          <li className="text-sm text-gold font-medium">
-                            +{industry.services.length - 3} more services
-                          </li>
-                        )}
-                      </ul>
-                    </div>
-                    <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white w-full group-hover:bg-navy group-hover:text-white transition-all duration-300">
-                      Learn More
+                    <p className="text-charcoal mb-6 leading-relaxed">{industry.description}</p>
+                    <Button asChild variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white w-full group-hover:bg-navy group-hover:text-white transition-all duration-300">
+                      <Link to={`/services#${industry.serviceLink}`}>Learn More</Link>
                     </Button>
                   </div>
                 </CardContent>

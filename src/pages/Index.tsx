@@ -2,29 +2,33 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, ArrowRight, Users, Shield, TrendingUp, Award } from "lucide-react";
+import { CheckCircle, ArrowRight, Users, Shield, TrendingUp, Award, Calculator, CreditCard, Search, Users as UsersIcon } from "lucide-react";
 
 const Index = () => {
   const services = [
     {
+      id: "corporate-tax",
       title: "Corporate Tax Planning",
       description: "Strategic tax optimization and compliance solutions for your business growth.",
-      icon: "📊"
+      icon: Calculator
     },
     {
+      id: "project-finance",
       title: "Project Finance & Credit",
       description: "Comprehensive funding strategies and loan syndication services.",
-      icon: "💼"
+      icon: CreditCard
     },
     {
+      id: "internal-audit",
       title: "Internal Audit & Compliance",
       description: "Risk-based audit and regulatory compliance support.",
-      icon: "🔍"
+      icon: Search
     },
     {
+      id: "business-consultancy",
       title: "Business Consultancy",
       description: "Strategic planning, valuation, and management consulting services.",
-      icon: "💡"
+      icon: UsersIcon
     }
   ];
 
@@ -52,7 +56,16 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1649972904349-6e44c42644a7')] bg-cover bg-center opacity-10"></div>
+        <video 
+          className="absolute inset-0 w-full h-full object-cover opacity-20" 
+          autoPlay 
+          muted 
+          loop
+          playsInline
+        >
+          <source src="https://videos.pexels.com/video-files/3196036/3196036-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
@@ -99,15 +112,19 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white">
-                <CardContent className="p-6 text-center">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="font-heading font-bold text-xl text-navy mb-3">{service.title}</h3>
-                  <p className="text-charcoal text-sm leading-relaxed">{service.description}</p>
-                  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ArrowRight className="w-5 h-5 text-orange mx-auto" />
-                  </div>
-                </CardContent>
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white cursor-pointer">
+                <Link to={`/services#${service.id}`}>
+                  <CardContent className="p-6 text-center">
+                    <div className="w-16 h-16 bg-navy rounded-full flex items-center justify-center mx-auto mb-4">
+                      <service.icon className="w-8 h-8 text-gold" />
+                    </div>
+                    <h3 className="font-heading font-bold text-xl text-navy mb-3">{service.title}</h3>
+                    <p className="text-charcoal text-sm leading-relaxed">{service.description}</p>
+                    <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <ArrowRight className="w-5 h-5 text-orange mx-auto" />
+                    </div>
+                  </CardContent>
+                </Link>
               </Card>
             ))}
           </div>

@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -7,54 +6,50 @@ import { Calculator, CreditCard, Search, Users, ArrowRight, CheckCircle } from "
 const Services = () => {
   const services = [
     {
+      id: "corporate-tax",
       icon: Calculator,
       title: "Corporate Tax Planning & Advisory",
       description: "Comprehensive tax strategies to optimize your business operations while ensuring full compliance.",
       features: [
         "Specialized services under Section 80JJAA",
         "Tax optimization strategies",
-        "Regulatory compliance and risk mitigation",
-        "Annual tax planning and projections",
-        "GST advisory and compliance"
+        "Regulatory compliance and risk mitigation"
       ],
       color: "from-navy to-navy/80"
     },
     {
+      id: "project-finance",
       icon: CreditCard,
       title: "Project Finance & Credit Facility",
       description: "Strategic funding solutions and banking relationships to fuel your business growth.",
       features: [
         "Loan syndication & funding strategy",
         "Liaison with banks & NBFCs",
-        "Documentation and financial structuring",
-        "Working capital optimization",
-        "Investment advisory services"
+        "Documentation and financial structuring"
       ],
       color: "from-gold to-gold/80"
     },
     {
+      id: "internal-audit",
       icon: Search,
       title: "Internal Audit & Compliance",
       description: "Risk-based audit services to strengthen your internal controls and ensure regulatory compliance.",
       features: [
         "Risk-based audit methodology",
         "Process and control review",
-        "Statutory and regulatory compliance support",
-        "Internal control system design",
-        "Fraud detection and prevention"
+        "Statutory and regulatory compliance support"
       ],
       color: "from-orange to-orange/80"
     },
     {
+      id: "business-consultancy",
       icon: Users,
       title: "Business Consultancy",
       description: "Strategic business advisory to help you make informed decisions and drive sustainable growth.",
       features: [
         "Business structuring & valuation",
         "Management consulting",
-        "Strategic planning and budgeting",
-        "Due diligence services",
-        "Merger & acquisition advisory"
+        "Strategic planning and budgeting"
       ],
       color: "from-charcoal to-charcoal/80"
     }
@@ -105,7 +100,7 @@ const Services = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-12">
             {services.map((service, index) => (
-              <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+              <Card key={index} id={service.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden scroll-mt-20">
                 <CardContent className="p-0">
                   <div className={`grid grid-cols-1 lg:grid-cols-2 ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                     <div className={`bg-gradient-to-br ${service.color} text-white p-8 lg:p-12 flex flex-col justify-center`}>
