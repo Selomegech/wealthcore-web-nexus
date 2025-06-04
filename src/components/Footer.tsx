@@ -57,9 +57,9 @@ const Footer = () => {
           <div>
             <h3 className="font-heading font-bold text-white text-lg mb-4">Contact Info</h3>
             <div className="space-y-2 text-sm text-gray-300">
-              <p>Email: info@wealthcore.in</p>
-              <p>Phone: +91 XXX XXX XXXX</p>
-              <p>Address: [Your Address]</p>
+              <p>Email: Info.wealthcoreadvisory@gmail.com</p>
+              <p>Phone: +91 8200310274</p>
+              <p>Address: B-113, Bhatar Trade centre, bhatar char rasta, Surat, Gujarat - 395017</p>
             </div>
           </div>
         </div>
