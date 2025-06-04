@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +24,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">W</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-navy text-lg">Wealthcore</span>
-              <span className="text-xs text-charcoal">Capital Advisory</span>
-            </div>
+            <img 
+              src="/lovable-uploads/fd9b967f-8777-4b7f-bed3-a8f76bbcd3cf.png" 
+              alt="Wealthcore Logo" 
+              className="h-10 w-auto"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -47,9 +44,6 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="bg-orange hover:bg-orange/90 text-white px-6 py-2 rounded-lg transition-all duration-200 transform hover:scale-105">
-              Get Consultation
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -86,9 +80,6 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="bg-orange hover:bg-orange/90 text-white w-fit px-6 py-2 rounded-lg">
-                Get Consultation
-              </Button>
             </div>
           </div>
         )}

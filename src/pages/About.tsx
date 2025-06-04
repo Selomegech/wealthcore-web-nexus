@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -88,13 +87,12 @@ const About = () => {
             </AnimatedSection>
             <AnimatedSection animation="fade-in" delay={200}>
               <div className="relative">
-                <div className="w-full h-96 bg-gradient-to-br from-lightgrey to-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="w-full h-96 bg-gradient-to-br from-lightgrey to-white rounded-2xl shadow-xl overflow-hidden flex items-center justify-center">
                   <img 
-                    src="https://images.unsplash.com/photo-1487958449943-2429e8be8625" 
-                    alt="Professional building" 
-                    className="w-full h-full object-cover"
+                    src="/lovable-uploads/5f6ee8c0-264f-4ba4-a35e-cbd3d479f538.png" 
+                    alt="Wealthcore Capital Advisory" 
+                    className="max-w-full max-h-full object-contain"
                   />
-                  <div className="absolute inset-0 bg-navy/20"></div>
                 </div>
               </div>
             </AnimatedSection>
