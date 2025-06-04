@@ -24,11 +24,13 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img 
-              src="/lovable-uploads/fd9b967f-8777-4b7f-bed3-a8f76bbcd3cf.png" 
-              alt="Wealthcore Logo" 
-              className="h-10 w-auto"
-            />
+            <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">W</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-heading font-bold text-navy text-lg">Wealthcore</span>
+              <span className="text-xs text-charcoal">Capital Advisory</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

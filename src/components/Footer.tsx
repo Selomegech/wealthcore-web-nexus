@@ -9,11 +9,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <img 
-                src="/lovable-uploads/fd9b967f-8777-4b7f-bed3-a8f76bbcd3cf.png" 
-                alt="Wealthcore Logo" 
-                className="h-10 w-auto brightness-0 invert"
-              />
+              <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg">W</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-heading font-bold text-white text-lg">Wealthcore</span>
+                <span className="text-sm text-gray-300">Capital Advisory Private Limited</span>
+              </div>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
               Empowering businesses with strategic financial insights that drive growth and ensure compliance. 
