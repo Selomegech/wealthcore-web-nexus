@@ -4,8 +4,11 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calculator, CreditCard, Search, Users, ArrowRight, CheckCircle } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Services = () => {
+  useScrollToTop();
+
   const services = [
     {
       id: "corporate-tax",
@@ -127,9 +130,11 @@ const Services = () => {
                             </li>
                           ))}
                         </ul>
-                        <Button className="bg-navy hover:bg-navy/90 text-white mt-6 group">
-                          Learn More
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        <Button asChild className="bg-navy hover:bg-navy/90 text-white mt-6 group">
+                          <Link to="/contact">
+                            Learn More
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                          </Link>
                         </Button>
                       </div>
                     </div>
