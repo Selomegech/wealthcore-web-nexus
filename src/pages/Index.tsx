@@ -43,18 +43,18 @@ const Index = () => {
     { text: "Transparent & ethical advisory", icon: CheckCircle }
   ];
 
-  const testimonials = [
-    {
-      text: "Wealthcore's strategic tax planning helped us optimize our tax burden significantly while ensuring full compliance.",
-      author: "CFO, Manufacturing Company",
-      company: "Fortune 500 Client"
-    },
-    {
-      text: "Their project finance expertise was instrumental in securing funding for our expansion projects.",
-      author: "Director, Real Estate",
-      company: "Leading Developer"
-    }
-  ];
+  // const testimonials = [
+  //   {
+  //     text: "Wealthcore's strategic tax planning helped us optimize our tax burden significantly while ensuring full compliance.",
+  //     author: "CFO, Manufacturing Company",
+  //     company: "Fortune 500 Client"
+  //   },
+  //   {
+  //     text: "Their project finance expertise was instrumental in securing funding for our expansion projects.",
+  //     author: "Director, Real Estate",
+  //     company: "Leading Developer"
+  //   }
+  // ];
 
   return (
     <div className="min-h-screen">
@@ -171,7 +171,7 @@ const Index = () => {
                   <div className="grid grid-cols-2 gap-4">
                     <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-6 transform rotate-3 hover:rotate-0 transition-transform duration-300">
                       <Users className="w-8 h-8 text-gold mb-3" />
-                      <h3 className="font-bold text-lg mb-2">500+</h3>
+                      <h3 className="font-bold text-lg mb-2">100+</h3>
                       <p className="text-sm">Satisfied Clients</p>
                     </Card>
                     <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-6 transform -rotate-3 hover:rotate-0 transition-transform duration-300 mt-8">
@@ -181,7 +181,7 @@ const Index = () => {
                     </Card>
                     <Card className="bg-gradient-to-br from-orange to-orange/80 text-white p-6 transform rotate-2 hover:rotate-0 transition-transform duration-300 -mt-4">
                       <Award className="w-8 h-8 text-white mb-3" />
-                      <h3 className="font-bold text-lg mb-2">15+</h3>
+                      <h3 className="font-bold text-lg mb-2">5+</h3>
                       <p className="text-sm">Years Experience</p>
                     </Card>
                     <Card className="bg-gradient-to-br from-charcoal to-charcoal/80 text-white p-6 transform -rotate-2 hover:rotate-0 transition-transform duration-300 mt-4">
@@ -197,8 +197,8 @@ const Index = () => {
         </section>
       </AnimatedSection>
 
-      {/* Testimonials Section */}
-      <AnimatedSection>
+      {/* Testimonials Section - Commented Out */}
+      {/* <AnimatedSection>
         <section className="py-20 bg-lightgrey">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -223,7 +223,7 @@ const Index = () => {
             </div>
           </div>
         </section>
-      </AnimatedSection>
+      </AnimatedSection> */}
 
       {/* CTA Section */}
       <AnimatedSection>

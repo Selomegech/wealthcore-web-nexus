@@ -189,26 +189,14 @@ const Industries = () => {
               <div className="grid grid-cols-2 gap-4">
                 <AnimatedSection delay={200}>
                   <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-6 transform hover:scale-105 transition-transform duration-300">
-                    <h3 className="font-bold text-2xl text-gold mb-2">15+</h3>
-                    <p className="text-sm">Years of Industry Experience</p>
+                    <h3 className="font-bold text-2xl text-gold mb-2">100+</h3>
+                    <p className="text-sm">Satisfied Clients</p>
                   </Card>
                 </AnimatedSection>
                 <AnimatedSection delay={300}>
                   <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-6 transform hover:scale-105 transition-transform duration-300 mt-8">
-                    <h3 className="font-bold text-2xl mb-2">6</h3>
-                    <p className="text-sm">Key Industries Served</p>
-                  </Card>
-                </AnimatedSection>
-                <AnimatedSection delay={400}>
-                  <Card className="bg-gradient-to-br from-orange to-orange/80 text-white p-6 transform hover:scale-105 transition-transform duration-300 -mt-4">
-                    <h3 className="font-bold text-2xl mb-2">500+</h3>
-                    <p className="text-sm">Successful Projects</p>
-                  </Card>
-                </AnimatedSection>
-                <AnimatedSection delay={500}>
-                  <Card className="bg-gradient-to-br from-charcoal to-charcoal/80 text-white p-6 transform hover:scale-105 transition-transform duration-300 mt-4">
-                    <h3 className="font-bold text-2xl text-gold mb-2">100%</h3>
-                    <p className="text-sm">Client Satisfaction</p>
+                    <h3 className="font-bold text-2xl mb-2">5+</h3>
+                    <p className="text-sm">Years Experience</p>
                   </Card>
                 </AnimatedSection>
               </div>

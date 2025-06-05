@@ -60,29 +60,6 @@ const Services = () => {
     }
   ];
 
-  const processSteps = [
-    {
-      step: "01",
-      title: "Consultation",
-      description: "Initial discussion to understand your business needs and challenges"
-    },
-    {
-      step: "02",
-      title: "Analysis",
-      description: "Comprehensive review of your current financial position and requirements"
-    },
-    {
-      step: "03",
-      title: "Strategy",
-      description: "Development of customized solutions aligned with your business objectives"
-    },
-    {
-      step: "04",
-      title: "Implementation",
-      description: "Execution of the strategy with ongoing support and monitoring"
-    }
-  ];
-
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
@@ -145,38 +122,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      {/* Process Section */}
-      <AnimatedSection>
-        <section className="py-20 bg-lightgrey">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-navy mb-4">Our Process</h2>
-              <p className="text-xl text-charcoal max-w-3xl mx-auto">
-                A systematic approach to delivering excellence in every engagement
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, index) => (
-                <AnimatedSection key={index} delay={index * 150}>
-                  <div className="text-center relative">
-                    {index < processSteps.length - 1 && (
-                      <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-gold transform translate-x-1/2 z-0"></div>
-                    )}
-                    <div className="relative z-10 bg-white">
-                      <div className="w-24 h-24 bg-gradient-to-br from-navy to-charcoal rounded-full flex items-center justify-center mx-auto mb-4 text-white font-heading font-bold text-xl">
-                        {step.step}
-                      </div>
-                      <h3 className="font-heading font-bold text-xl text-navy mb-3">{step.title}</h3>
-                      <p className="text-charcoal text-sm leading-relaxed">{step.description}</p>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-          </div>
-        </section>
-      </AnimatedSection>
 
       {/* CTA Section */}
       <AnimatedSection>
