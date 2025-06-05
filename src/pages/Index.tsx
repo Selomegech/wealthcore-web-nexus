@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -61,16 +60,15 @@ const Index = () => {
       {/* Hero Section */}
       <AnimatedSection>
         <section className="relative bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white py-20 overflow-hidden">
-          <video 
+          <div 
             className="absolute inset-0 w-full h-full object-cover opacity-20" 
-            autoPlay 
-            muted 
-            loop
-            playsInline
-          >
-            <source src="https://videos.pexels.com/video-files/3196036/3196036-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+            style={{
+              backgroundImage: 'url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
