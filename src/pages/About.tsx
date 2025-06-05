@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -32,10 +31,10 @@ const About = () => {
   ];
 
   const stats = [
-    { number: 500, label: "Clients Served", icon: Users, suffix: "+" },
-    { number: 15, label: "Years Experience", icon: Award, suffix: "+" },
+    { number: 100, label: "Clients Served", icon: Users, suffix: "+" },
+    { number: 5, label: "Years Experience", icon: Award, suffix: "+" },
     { number: 1000, label: "Projects Financed", icon: TrendingUp, suffix: "Cr+" },
-    { number: 100, label: "Compliance Rate", icon: Target, suffix: "%" }
+    { number: 100, label: "Success Rate", icon: Target, suffix: "%" }
   ];
 
   const teamMember = {

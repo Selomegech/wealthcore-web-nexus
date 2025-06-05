@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -23,9 +24,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-navy rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">W</span>
-            </div>
+            <img 
+              src="/lovable-uploads/c63c5efc-83ab-4b3e-9191-66ac23b8b581.png" 
+              alt="Wealthcore Logo" 
+              className="w-10 h-10 object-contain"
+            />
             <div className="flex flex-col">
               <span className="font-heading font-bold text-navy text-lg">Wealthcore</span>
               <span className="text-xs text-charcoal">Capital Advisory</span>

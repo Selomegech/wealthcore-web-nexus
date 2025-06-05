@@ -9,9 +9,11 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
-              </div>
+              <img 
+                src="/lovable-uploads/c63c5efc-83ab-4b3e-9191-66ac23b8b581.png" 
+                alt="Wealthcore Logo" 
+                className="w-10 h-10 object-contain"
+              />
               <div className="flex flex-col">
                 <span className="font-heading font-bold text-white text-lg">Wealthcore</span>
                 <span className="text-sm text-gray-300">Capital Advisory Private Limited</span>
