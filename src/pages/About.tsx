@@ -1,7 +1,8 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Target, Eye, Heart, Users, Award, TrendingUp } from "lucide-react";
+import { Target, Eye, Heart, Users, Award, TrendingUp, User } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CountingNumber from "@/components/CountingNumber";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -36,6 +37,14 @@ const About = () => {
     { number: 1000, label: "Projects Financed", icon: TrendingUp, suffix: "Cr+" },
     { number: 100, label: "Compliance Rate", icon: Target, suffix: "%" }
   ];
+
+  const teamMember = {
+    name: "CA Anmol Kedia",
+    designation: "Director & Founder",
+    specialization: "Corporate Tax Planning & Strategic Advisory",
+    experience: "15+ years",
+    description: "Expert in complex tax structures and strategic financial planning for large corporates. Led numerous successful project financing initiatives."
+  };
 
   const [statsRef, statsVisible] = useIntersectionObserver({
     threshold: 0.3,
@@ -100,8 +109,55 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission & Vision */}
+      {/* Team Member Section */}
       <section className="py-20 bg-lightgrey">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <div className="text-center mb-16">
+              <h2 className="font-heading font-bold text-3xl lg:text-4xl text-navy mb-4">Meet Our Expert</h2>
+              <p className="text-xl text-charcoal max-w-3xl mx-auto">
+                Our seasoned professional brings decades of experience in finance, taxation, and strategic advisory.
+              </p>
+            </div>
+          </AnimatedSection>
+          <div className="max-w-4xl mx-auto">
+            <AnimatedSection>
+              <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                <CardContent className="p-0">
+                  <div className="grid grid-cols-1 md:grid-cols-2">
+                    <div className="bg-gradient-to-br from-navy to-charcoal text-white p-8 flex items-center justify-center">
+                      <div className="text-center">
+                        <div className="w-32 h-32 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
+                          <User className="w-16 h-16 text-white" />
+                        </div>
+                        <h3 className="font-heading font-bold text-2xl mb-2">{teamMember.name}</h3>
+                        <p className="text-gold text-lg font-medium">{teamMember.designation}</p>
+                      </div>
+                    </div>
+                    <div className="p-8 flex flex-col justify-center">
+                      <div className="mb-6">
+                        <p className="text-sm text-charcoal mb-2">
+                          <span className="font-medium">Specialization:</span> {teamMember.specialization}
+                        </p>
+                        <p className="text-sm text-charcoal mb-4">
+                          <span className="font-medium">Experience:</span> {teamMember.experience}
+                        </p>
+                      </div>
+                      <p className="text-charcoal leading-relaxed mb-6">{teamMember.description}</p>
+                      <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white w-fit">
+                        Connect on LinkedIn
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <AnimatedSection>
@@ -144,7 +200,7 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-lightgrey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <div className="text-center mb-16">
@@ -207,7 +263,7 @@ const About = () => {
 
       {/* CTA Section */}
       <AnimatedSection>
-        <section className="py-20 bg-lightgrey">
+        <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="font-heading font-bold text-3xl lg:text-4xl text-navy mb-6">Ready to Partner with Us?</h2>
             <p className="text-xl text-charcoal mb-8 max-w-3xl mx-auto">

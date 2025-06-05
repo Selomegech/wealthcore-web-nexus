@@ -11,8 +11,8 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Industries from "./pages/Industries";
-import Team from "./pages/Team";
-import Resources from "./pages/Resources";
+// import Team from "./pages/Team";
+// import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -29,8 +29,8 @@ const AppContent = () => {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
         <Route path="/industries" element={<Industries />} />
-        <Route path="/team" element={<Team />} />
-        <Route path="/resources" element={<Resources />} />
+        {/* <Route path="/team" element={<Team />} /> */}
+        {/* <Route path="/resources" element={<Resources />} /> */}
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

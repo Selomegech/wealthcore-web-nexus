@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,8 +10,8 @@ const Navbar = () => {
     { name: "About Us", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Industries", path: "/industries" },
-    { name: "Team", path: "/team" },
-    { name: "Resources", path: "/resources" },
+    // { name: "Team", path: "/team" },
+    // { name: "Resources", path: "/resources" },
     { name: "Contact", path: "/contact" },
   ];
 
