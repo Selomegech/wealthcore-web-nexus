@@ -1,7 +1,8 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Target, Eye, Heart, Users, Award, TrendingUp, User } from "lucide-react";
+import { Target, Eye, Heart, Users, Award, TrendingUp, User, Settings } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CountingNumber from "@/components/CountingNumber";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -33,7 +34,7 @@ const About = () => {
   const stats = [
     { number: 100, label: "Clients Served", icon: Users, suffix: "+" },
     { number: 5, label: "Years Experience", icon: Award, suffix: "+" },
-    { number: 1000, label: "Projects Financed", icon: TrendingUp, suffix: "Cr+" },
+    { number: 6, label: "Services", icon: Settings, suffix: "+" },
     { number: 100, label: "Success Rate", icon: Target, suffix: "%" }
   ];
 
@@ -244,7 +245,6 @@ const About = () => {
                     <stat.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="font-heading font-bold text-4xl text-gold mb-2">
-                    {stat.number === 1000 ? "₹" : ""}
                     <CountingNumber 
                       end={stat.number} 
                       isVisible={statsVisible} 

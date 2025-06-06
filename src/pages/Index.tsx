@@ -61,14 +61,15 @@ const Index = () => {
       <AnimatedSection>
         <section className="relative bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white py-20 overflow-hidden">
           <div 
-            className="absolute inset-0 w-full h-full object-cover opacity-20" 
+            className="absolute inset-0 w-full h-full object-cover" 
             style={{
-              backgroundImage: 'url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6)',
+              backgroundImage: 'url(https://www.weka.io/wp-content/uploads/files/2021/09/modern-analytic.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat'
             }}
           />
+          <div className="absolute inset-0 bg-navy/60"></div>
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">

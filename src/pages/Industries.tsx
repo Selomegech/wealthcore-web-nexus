@@ -190,7 +190,7 @@ const Industries = () => {
                 <AnimatedSection delay={200}>
                   <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-6 transform hover:scale-105 transition-transform duration-300">
                     <h3 className="font-bold text-2xl text-gold mb-2">100+</h3>
-                    <p className="text-sm">Satisfied Clients</p>
+                    <p className="text-sm">Clients</p>
                   </Card>
                 </AnimatedSection>
                 <AnimatedSection delay={300}>
