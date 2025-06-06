@@ -69,8 +69,8 @@ const Index = () => {
             ></iframe>
           </div>
           
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/70"></div>
+          {/* Darker Overlay */}
+          <div className="absolute inset-0 bg-black/85"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -92,6 +92,8 @@ const Index = () => {
                   </Button>
                 </div>
               </div>
+              {/* Commented out Strategic Excellence section */}
+              {/* 
               <div className="relative animate-float">
                 <div className="w-full h-96 bg-gradient-to-br from-gold/20 to-transparent rounded-2xl backdrop-blur-sm border border-gold/30 flex items-center justify-center">
                   <div className="text-center">
@@ -103,6 +105,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
+              */}
             </div>
           </div>
         </section>
@@ -123,12 +126,14 @@ const Index = () => {
                 <AnimatedSection key={index} delay={index * 100}>
                   <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white cursor-pointer h-full">
                     <Link to={`/services#${service.id}`}>
-                      <CardContent className="p-10 text-center h-full flex flex-col">
-                        <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
-                          <service.icon className="w-10 h-10 text-gold" />
+                      <CardContent className="p-10 text-center h-full flex flex-col justify-between">
+                        <div>
+                          <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
+                            <service.icon className="w-10 h-10 text-gold" />
+                          </div>
+                          <h3 className="font-heading font-bold text-2xl text-navy mb-4">{service.title}</h3>
+                          <p className="text-charcoal text-base leading-relaxed">{service.description}</p>
                         </div>
-                        <h3 className="font-heading font-bold text-2xl text-navy mb-4">{service.title}</h3>
-                        <p className="text-charcoal text-base leading-relaxed flex-1">{service.description}</p>
                         <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <ArrowRight className="w-6 h-6 text-orange mx-auto" />
                         </div>

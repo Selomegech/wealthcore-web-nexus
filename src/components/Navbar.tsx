@@ -36,8 +36,8 @@ const Navbar = () => {
   // Determine navbar styling based on page and scroll position
   const getNavbarStyles = () => {
     if (isHomePage && !isScrolled) {
-      // Home page hero section - dark/transparent navbar
-      return "bg-black/80 backdrop-blur-sm border-black/20";
+      // Home page hero section - transparent navbar that lays on video
+      return "bg-transparent border-transparent";
     } else {
       // Default white navbar for other pages or when scrolled
       return "bg-white/95 backdrop-blur-sm border-gray-200";
@@ -76,8 +76,32 @@ const Navbar = () => {
     }
   };
 
+  const getMobileMenuStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "bg-black/90 backdrop-blur-sm border-t border-gray-600";
+    } else {
+      return "bg-white border-t border-gray-200";
+    }
+  };
+
+  const getMobileTextStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "text-white hover:text-gold";
+    } else {
+      return "text-charcoal hover:text-navy";
+    }
+  };
+
+  const getMobileActiveStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "text-gold";
+    } else {
+      return "text-navy";
+    }
+  };
+
   return (
-    <nav className={`sticky top-0 z-50 border-b shadow-sm transition-all duration-300 ${getNavbarStyles()}`}>
+    <nav className={`fixed top-0 w-full z-50 border-b shadow-sm transition-all duration-300 ${getNavbarStyles()}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -127,15 +151,15 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-200 bg-white">
+          <div className={`lg:hidden py-4 ${getMobileMenuStyles()}`}>
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.path}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-medium transition-colors duration-200 hover:text-navy ${
-                    isActive(item.path) ? "text-navy" : "text-charcoal"
+                  className={`text-lg font-medium transition-colors duration-200 ${
+                    isActive(item.path) ? getMobileActiveStyles() : getMobileTextStyles()
                   }`}
                 >
                   {item.name}
