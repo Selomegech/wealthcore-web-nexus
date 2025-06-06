@@ -107,14 +107,14 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
                 <AnimatedSection key={index} delay={index * 100}>
-                  <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white cursor-pointer">
+                  <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white cursor-pointer h-full">
                     <Link to={`/services#${service.id}`}>
-                      <CardContent className="p-8 text-center">
+                      <CardContent className="p-8 text-center h-full flex flex-col">
                         <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
                           <service.icon className="w-10 h-10 text-gold" />
                         </div>
                         <h3 className="font-heading font-bold text-2xl text-navy mb-4">{service.title}</h3>
-                        <p className="text-charcoal text-base leading-relaxed">{service.description}</p>
+                        <p className="text-charcoal text-base leading-relaxed flex-1">{service.description}</p>
                         <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           <ArrowRight className="w-6 h-6 text-orange mx-auto" />
                         </div>
@@ -156,12 +156,12 @@ const Index = () => {
               <AnimatedSection delay={200}>
                 <div className="relative">
                   <div className="grid grid-cols-2 gap-6">
-                    <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                    <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-8 transform rotate-3 hover:rotate-0 transition-transform duration-300 h-full flex flex-col justify-center">
                       <Users className="w-10 h-10 text-gold mb-4" />
                       <h3 className="font-bold text-2xl mb-3">500+</h3>
                       <p className="text-base">Satisfied Clients</p>
                     </Card>
-                    <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-8 transform -rotate-3 hover:rotate-0 transition-transform duration-300 mt-8">
+                    <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-8 transform -rotate-3 hover:rotate-0 transition-transform duration-300 mt-8 h-full flex flex-col justify-center">
                       <Award className="w-10 h-10 text-white mb-4" />
                       <h3 className="font-bold text-2xl mb-3">5+</h3>
                       <p className="text-base">Years Expertise</p>

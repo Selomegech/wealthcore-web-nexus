@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Building, Factory, Heart, ShoppingCart, Zap, Users, Sun, Gem } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
 
 const Industries = () => {
   const industries = [
@@ -77,160 +76,155 @@ const Industries = () => {
     },
     { 
       logo: "/lovable-uploads/db6326db-084e-4476-a534-1928feb93ea1.png"
+    },
+    { 
+      logo: "/lovable-uploads/5f6ee8c0-264f-4ba4-a35e-cbd3d479f538.png"
+    },
+    { 
+      logo: "/lovable-uploads/c63c5efc-83ab-4b3e-9191-66ac23b8b581.png"
+    },
+    { 
+      logo: "/lovable-uploads/fd9b967f-8777-4b7f-bed3-a8f76bbcd3cf.png"
     }
   ];
 
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <AnimatedSection>
-        <section className="py-24 bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8">
-                Industries <span className="text-gold">We Serve</span>
-              </h1>
-              <p className="text-2xl text-gray-300 leading-relaxed">
-                Tailored financial strategies for every business domain. Our deep industry expertise helps us deliver 
-                solutions that are perfectly aligned with sector-specific challenges and opportunities.
-              </p>
-            </div>
+      <section className="py-24 bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8">
+              Industries <span className="text-gold">We Serve</span>
+            </h1>
+            <p className="text-2xl text-gray-300 leading-relaxed">
+              Tailored financial strategies for every business domain. Our deep industry expertise helps us deliver 
+              solutions that are perfectly aligned with sector-specific challenges and opportunities.
+            </p>
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
 
       {/* Industries Grid */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {industries.map((industry, index) => (
-              <AnimatedSection key={index} delay={index * 100}>
-                <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="relative h-56 overflow-hidden">
-                      <img 
-                        src={industry.image} 
-                        alt={industry.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                      <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors duration-300"></div>
-                      <div className="absolute top-6 left-6">
-                        <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center">
-                          <industry.icon className="w-8 h-8 text-white" />
-                        </div>
+              <Card key={index} className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden h-full">
+                <CardContent className="p-0 h-full flex flex-col">
+                  <div className="relative h-56 overflow-hidden">
+                    <img 
+                      src={industry.image} 
+                      alt={industry.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors duration-300"></div>
+                    <div className="absolute top-6 left-6">
+                      <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center">
+                        <industry.icon className="w-8 h-8 text-white" />
                       </div>
                     </div>
-                    <div className="p-8">
-                      <h3 className="font-heading font-bold text-2xl text-navy mb-4">{industry.title}</h3>
-                      <p className="text-charcoal mb-8 leading-relaxed text-lg">{industry.description}</p>
-                      <Button asChild variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white w-full group-hover:bg-navy group-hover:text-white transition-all duration-300 text-lg px-6 py-3">
-                        <Link to={`/services#${industry.serviceLink}`}>Learn More</Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
+                  </div>
+                  <div className="p-8 flex-1 flex flex-col">
+                    <h3 className="font-heading font-bold text-2xl text-navy mb-4">{industry.title}</h3>
+                    <p className="text-charcoal mb-8 leading-relaxed text-lg flex-1">{industry.description}</p>
+                    <Button asChild variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white w-full group-hover:bg-navy group-hover:text-white transition-all duration-300 text-lg px-6 py-3 mt-auto">
+                      <Link to={`/services#${industry.serviceLink}`}>Learn More</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Client Showcase with Auto-sliding */}
-      <AnimatedSection>
-        <section className="py-24 bg-lightgrey">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <h2 className="font-heading font-bold text-4xl lg:text-5xl text-navy mb-6">Trusted by Industry Leaders</h2>
-              <p className="text-2xl text-charcoal max-w-3xl mx-auto">
-                We're proud to work with some of the most respected names across various industries
-              </p>
-            </div>
-            <div className="relative overflow-hidden">
-              <div className="flex animate-scroll">
-                {[...clientLogos, ...clientLogos].map((client, index) => (
-                  <div key={index} className="flex-shrink-0 w-64 mx-8">
-                    <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group">
-                      <CardContent className="p-8 text-center">
-                        <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
-                          <img 
-                            src={client.logo} 
-                            alt="Client Logo"
-                            className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                          />
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
+      <section className="py-24 bg-lightgrey">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="font-heading font-bold text-4xl lg:text-5xl text-navy mb-6">Trusted by Industry Leaders</h2>
+            <p className="text-2xl text-charcoal max-w-3xl mx-auto">
+              We're proud to work with some of the most respected names across various industries
+            </p>
+          </div>
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll">
+              {[...clientLogos, ...clientLogos].map((client, index) => (
+                <div key={index} className="flex-shrink-0 w-64 mx-8">
+                  <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group">
+                    <CardContent className="p-8 text-center">
+                      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                        <img 
+                          src={client.logo} 
+                          alt="Client Logo"
+                          className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
             </div>
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
 
       {/* Industry Expertise */}
-      <AnimatedSection>
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="font-heading font-bold text-4xl lg:text-5xl text-navy mb-8">Why Industry Expertise Matters</h2>
-                <div className="space-y-8 text-charcoal leading-relaxed text-lg">
-                  <p>
-                    Each industry has its unique challenges, regulatory requirements, and growth patterns. 
-                    Our deep understanding of sector-specific dynamics allows us to provide insights that generic 
-                    financial advisors simply cannot match.
-                  </p>
-                  <p>
-                    From understanding the nuances of export incentives in manufacturing to navigating the complex 
-                    regulatory landscape in healthcare, our team brings real-world experience and specialized knowledge 
-                    to every engagement.
-                  </p>
-                  <p>
-                    This industry-focused approach ensures that our solutions are not just financially sound, 
-                    but also practically implementable within your specific business context. With 500+ clients 
-                    across diverse sectors, we bring proven expertise to every partnership.
-                  </p>
-                </div>
-              </div>
-              <div className="grid grid-cols-2 gap-6">
-                <AnimatedSection delay={200}>
-                  <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-8 transform hover:scale-105 transition-transform duration-300">
-                    <h3 className="font-bold text-3xl text-gold mb-3">500+</h3>
-                    <p className="text-base">Clients</p>
-                  </Card>
-                </AnimatedSection>
-                <AnimatedSection delay={300}>
-                  <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-8 transform hover:scale-105 transition-transform duration-300 mt-8">
-                    <h3 className="font-bold text-3xl mb-3">5+</h3>
-                    <p className="text-base">Years Experience</p>
-                  </Card>
-                </AnimatedSection>
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="font-heading font-bold text-4xl lg:text-5xl text-navy mb-8">Why Industry Expertise Matters</h2>
+              <div className="space-y-8 text-charcoal leading-relaxed text-lg">
+                <p>
+                  Each industry has its unique challenges, regulatory requirements, and growth patterns. 
+                  Our deep understanding of sector-specific dynamics allows us to provide insights that generic 
+                  financial advisors simply cannot match.
+                </p>
+                <p>
+                  From understanding the nuances of export incentives in manufacturing to navigating the complex 
+                  regulatory landscape in healthcare, our team brings real-world experience and specialized knowledge 
+                  to every engagement.
+                </p>
+                <p>
+                  This industry-focused approach ensures that our solutions are not just financially sound, 
+                  but also practically implementable within your specific business context. With 500+ clients 
+                  across diverse sectors, we bring proven expertise to every partnership.
+                </p>
               </div>
             </div>
+            <div className="grid grid-cols-2 gap-6">
+              <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-8 transform hover:scale-105 transition-transform duration-300">
+                <h3 className="font-bold text-3xl text-gold mb-3">500+</h3>
+                <p className="text-base">Clients</p>
+              </Card>
+              <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-8 transform hover:scale-105 transition-transform duration-300 mt-8">
+                <h3 className="font-bold text-3xl mb-3">5+</h3>
+                <p className="text-base">Years Experience</p>
+              </Card>
+            </div>
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
 
       {/* CTA Section */}
-      <AnimatedSection>
-        <section className="py-24 bg-gradient-to-r from-navy to-charcoal text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-8">Ready to Discuss Your Industry-Specific Needs?</h2>
-            <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
-              Let our industry experts help you navigate the unique challenges and opportunities in your sector.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button asChild className="bg-orange hover:bg-orange/90 text-white px-10 py-4 text-xl rounded-lg transition-all duration-200 transform hover:scale-105">
-                <Link to="/contact">Schedule Industry Consultation</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white px-10 py-4 text-xl rounded-lg transition-all duration-200">
-                <Link to="/services">View All Services</Link>
-              </Button>
-            </div>
+      <section className="py-24 bg-gradient-to-r from-navy to-charcoal text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-8">Ready to Discuss Your Industry-Specific Needs?</h2>
+          <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+            Let our industry experts help you navigate the unique challenges and opportunities in your sector.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button asChild className="bg-orange hover:bg-orange/90 text-white px-10 py-4 text-xl rounded-lg transition-all duration-200 transform hover:scale-105">
+              <Link to="/contact">Schedule Industry Consultation</Link>
+            </Button>
+            <Button asChild variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white px-10 py-4 text-xl rounded-lg transition-all duration-200">
+              <Link to="/services">View All Services</Link>
+            </Button>
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
     </div>
   );
 };

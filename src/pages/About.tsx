@@ -2,7 +2,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Target, Eye, Heart, Users, Award, TrendingUp, User, Calculator, CreditCard } from "lucide-react";
+import { Target, Eye, Heart, Users, Award, TrendingUp, User, Calculator, CreditCard, ExternalLink } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import CountingNumber from "@/components/CountingNumber";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
@@ -38,13 +38,32 @@ const About = () => {
     { number: 100, label: "Funds Sourced", icon: CreditCard, suffix: " Cr+", prefix: "₹" }
   ];
 
-  const teamMember = {
-    name: "CA Anmol Kedia",
-    designation: "Director & Founder",
-    specialization: "Corporate Tax Planning & Strategic Advisory",
-    experience: "15+ years",
-    description: "Expert in complex tax structures and strategic financial planning for large corporates. Led numerous successful project financing initiatives."
-  };
+  const teamMembers = [
+    {
+      name: "CA Anmol Kedia",
+      designation: "Director",
+      specialization: "Project Finance & Credit Facility",
+      description: "CA Anmol Kedia is a finance professional with expertise in structuring and arranging financial solutions for large-scale business ventures. He guides clients through funding strategies, lender negotiations, and financial closures to ensure smooth execution of growth plans. His approach combines analytical insight with practical execution.",
+      linkedin: "linkedin.com/in/anmolkedia",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+    },
+    {
+      name: "CA Abhishek Jain",
+      designation: "Director",
+      specialization: "Corporate Tax Planning & Advisory",
+      description: "CA Abhishek Jain is a trusted advisor in corporate taxation, helping businesses navigate complex tax regulations with strategic clarity. He focuses on optimizing tax structures, ensuring compliance, and aligning tax planning with overall business objectives. His solutions are designed to drive efficiency and long-term value.",
+      linkedin: "linkedin.com/in/caabhishekjain001",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+    },
+    {
+      name: "CA Rushab Khaitan",
+      designation: "Director",
+      specialization: "Internal Audit & Compliance",
+      description: "CA Rushab Khaitan is a specialist in strengthening internal controls and ensuring regulatory compliance across business functions. He helps organizations identify operational risks, enhance process efficiency, and maintain accountability through structured audit practices. His work supports robust governance and sustained business integrity.",
+      linkedin: "linkedin.com/in/carushabkhaitan",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+    }
+  ];
 
   const [statsRef, statsVisible] = useIntersectionObserver({
     threshold: 0.3,
@@ -109,7 +128,7 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Member Section */}
+      {/* Team Members Section */}
       <section className="py-24 bg-lightgrey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
@@ -120,38 +139,43 @@ const About = () => {
               </p>
             </div>
           </AnimatedSection>
-          <div className="max-w-4xl mx-auto">
-            <AnimatedSection>
-              <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="grid grid-cols-1 md:grid-cols-2">
-                    <div className="bg-gradient-to-br from-navy to-charcoal text-white p-10 flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="w-36 h-36 bg-gold rounded-full flex items-center justify-center mx-auto mb-8">
-                          <User className="w-18 h-18 text-white" />
+          
+          <div className="space-y-12">
+            {teamMembers.map((member, index) => (
+              <AnimatedSection key={index} delay={index * 200}>
+                <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className={`grid grid-cols-1 md:grid-cols-2 ${index % 2 === 1 ? 'md:grid-flow-col-dense' : ''}`}>
+                      <div className={`bg-gradient-to-br from-navy to-charcoal text-white p-10 flex items-center justify-center ${index % 2 === 1 ? 'md:col-start-1' : ''}`}>
+                        <div className="text-center">
+                          <div className="w-36 h-36 rounded-full overflow-hidden mx-auto mb-8 border-4 border-gold">
+                            <img 
+                              src={member.image} 
+                              alt={member.name}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <h3 className="font-heading font-bold text-3xl mb-3">{member.name}</h3>
+                          <p className="text-gold text-xl font-medium mb-2">{member.designation}</p>
+                          <p className="text-gray-300 text-lg">{member.specialization}</p>
                         </div>
-                        <h3 className="font-heading font-bold text-3xl mb-3">{teamMember.name}</h3>
-                        <p className="text-gold text-xl font-medium">{teamMember.designation}</p>
+                      </div>
+                      <div className="p-10 flex flex-col justify-center bg-white">
+                        <p className="text-charcoal leading-relaxed mb-8 text-lg">{member.description}</p>
+                        <Button 
+                          variant="outline" 
+                          className="border-navy text-navy hover:bg-navy hover:text-white w-fit text-lg px-6 py-3"
+                          onClick={() => window.open(`https://${member.linkedin}`, '_blank')}
+                        >
+                          <ExternalLink className="w-5 h-5 mr-2" />
+                          Connect on LinkedIn
+                        </Button>
                       </div>
                     </div>
-                    <div className="p-10 flex flex-col justify-center">
-                      <div className="mb-8">
-                        <p className="text-base text-charcoal mb-3">
-                          <span className="font-medium">Specialization:</span> {teamMember.specialization}
-                        </p>
-                        <p className="text-base text-charcoal mb-6">
-                          <span className="font-medium">Experience:</span> {teamMember.experience}
-                        </p>
-                      </div>
-                      <p className="text-charcoal leading-relaxed mb-8 text-lg">{teamMember.description}</p>
-                      <Button variant="outline" className="border-navy text-navy hover:bg-navy hover:text-white w-fit text-lg px-6 py-3">
-                        Connect on LinkedIn
-                      </Button>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </AnimatedSection>
+                  </CardContent>
+                </Card>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>

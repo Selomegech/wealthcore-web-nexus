@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -78,258 +77,242 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <AnimatedSection>
-        <section className="py-24 bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto">
-              <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8">
-                Let's Talk <span className="text-gold">Strategy</span>
-              </h1>
-              <p className="text-2xl text-gray-300 leading-relaxed">
-                Ready to take your business to the next level? Get in touch with our expert team and discover 
-                how we can help optimize your financial operations and strategic planning.
-              </p>
-            </div>
+      <section className="py-24 bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8">
+              Let's Talk <span className="text-gold">Strategy</span>
+            </h1>
+            <p className="text-2xl text-gray-300 leading-relaxed">
+              Ready to take your business to the next level? Get in touch with our expert team and discover 
+              how we can help optimize your financial operations and strategic planning.
+            </p>
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
 
       {/* Contact Information */}
-      <AnimatedSection>
-        <section className="py-24 bg-lightgrey">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-20">
-              <h2 className="font-heading font-bold text-4xl lg:text-5xl text-navy mb-6">Get in Touch</h2>
-              <p className="text-2xl text-charcoal max-w-3xl mx-auto">
-                Multiple ways to reach us. Choose what works best for you.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {contactInfo.map((info, index) => (
-                <AnimatedSection key={index} delay={index * 100}>
-                  <Card className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                    <CardContent className="p-8 text-center">
-                      <div className={`w-20 h-20 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                        <info.icon className="w-10 h-10 text-white" />
-                      </div>
-                      <h3 className="font-heading font-bold text-xl text-navy mb-4">{info.title}</h3>
-                      <div className="space-y-2">
-                        {info.details.map((detail, detailIndex) => (
-                          <p key={detailIndex} className="text-charcoal text-base">{detail}</p>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </AnimatedSection>
-              ))}
-            </div>
+      <section className="py-24 bg-lightgrey">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-20">
+            <h2 className="font-heading font-bold text-4xl lg:text-5xl text-navy mb-6">Get in Touch</h2>
+            <p className="text-2xl text-charcoal max-w-3xl mx-auto">
+              Multiple ways to reach us. Choose what works best for you.
+            </p>
           </div>
-        </section>
-      </AnimatedSection>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {contactInfo.map((info, index) => (
+              <Card key={index} className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
+                <CardContent className="p-8 text-center h-full flex flex-col">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                    <info.icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="font-heading font-bold text-xl text-navy mb-4">{info.title}</h3>
+                  <div className="space-y-2 flex-1 flex flex-col justify-center">
+                    {info.details.map((detail, detailIndex) => (
+                      <p key={detailIndex} className="text-charcoal text-base">{detail}</p>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Contact Form & Map */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <AnimatedSection>
-              <div>
-                <h2 className="font-heading font-bold text-4xl text-navy mb-8">Send us a Message</h2>
-                <Card className="border-0 shadow-lg">
-                  <CardContent className="p-10">
-                    <form onSubmit={handleSubmit} className="space-y-8">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-base font-medium text-charcoal mb-3">
-                            Full Name *
-                          </label>
-                          <Input
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            required
-                            className="border-gray-300 focus:border-navy text-base py-3"
-                            placeholder="Your full name"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-base font-medium text-charcoal mb-3">
-                            Email Address *
-                          </label>
-                          <Input
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            required
-                            className="border-gray-300 focus:border-navy text-base py-3"
-                            placeholder="your.email@company.com"
-                          />
-                        </div>
-                      </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                          <label className="block text-base font-medium text-charcoal mb-3">
-                            Phone Number
-                          </label>
-                          <Input
-                            type="tel"
-                            name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
-                            className="border-gray-300 focus:border-navy text-base py-3"
-                            placeholder="+91 XXXXX XXXXX"
-                          />
-                        </div>
-                        <div>
-                          <label className="block text-base font-medium text-charcoal mb-3">
-                            Company Name
-                          </label>
-                          <Input
-                            type="text"
-                            name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            className="border-gray-300 focus:border-navy text-base py-3"
-                            placeholder="Your company name"
-                          />
-                        </div>
-                      </div>
-
+            <div>
+              <h2 className="font-heading font-bold text-4xl text-navy mb-8">Send us a Message</h2>
+              <Card className="border-0 shadow-lg">
+                <CardContent className="p-10">
+                  <form onSubmit={handleSubmit} className="space-y-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-base font-medium text-charcoal mb-3">
-                          Service Interest
+                          Full Name *
                         </label>
-                        <select
-                          name="service"
-                          value={formData.service}
-                          onChange={handleInputChange}
-                          className="w-full border border-gray-300 rounded-md px-4 py-3 focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy text-base"
-                        >
-                          <option value="">Select a service</option>
-                          {services.map((service) => (
-                            <option key={service} value={service}>{service}</option>
-                          ))}
-                        </select>
-                      </div>
-
-                      <div>
-                        <label className="block text-base font-medium text-charcoal mb-3">
-                          Message *
-                        </label>
-                        <Textarea
-                          name="message"
-                          value={formData.message}
+                        <Input
+                          type="text"
+                          name="name"
+                          value={formData.name}
                           onChange={handleInputChange}
                           required
-                          rows={6}
-                          className="border-gray-300 focus:border-navy resize-none text-base"
-                          placeholder="Tell us about your requirements, challenges, or questions..."
+                          className="border-gray-300 focus:border-navy text-base py-3"
+                          placeholder="Your full name"
                         />
                       </div>
+                      <div>
+                        <label className="block text-base font-medium text-charcoal mb-3">
+                          Email Address *
+                        </label>
+                        <Input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          required
+                          className="border-gray-300 focus:border-navy text-base py-3"
+                          placeholder="your.email@company.com"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-base font-medium text-charcoal mb-3">
+                          Phone Number
+                        </label>
+                        <Input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          className="border-gray-300 focus:border-navy text-base py-3"
+                          placeholder="+91 XXXXX XXXXX"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-base font-medium text-charcoal mb-3">
+                          Company Name
+                        </label>
+                        <Input
+                          type="text"
+                          name="company"
+                          value={formData.company}
+                          onChange={handleInputChange}
+                          className="border-gray-300 focus:border-navy text-base py-3"
+                          placeholder="Your company name"
+                        />
+                      </div>
+                    </div>
 
-                      <Button 
-                        type="submit" 
-                        className="w-full bg-orange hover:bg-orange/90 text-white py-4 text-xl font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
+                    <div>
+                      <label className="block text-base font-medium text-charcoal mb-3">
+                        Service Interest
+                      </label>
+                      <select
+                        name="service"
+                        value={formData.service}
+                        onChange={handleInputChange}
+                        className="w-full border border-gray-300 rounded-md px-4 py-3 focus:border-navy focus:outline-none focus:ring-1 focus:ring-navy text-base"
                       >
-                        <Send className="w-6 h-6 mr-3" />
-                        Send Message
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              </div>
-            </AnimatedSection>
+                        <option value="">Select a service</option>
+                        {services.map((service) => (
+                          <option key={service} value={service}>{service}</option>
+                        ))}
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-base font-medium text-charcoal mb-3">
+                        Message *
+                      </label>
+                      <Textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows={6}
+                        className="border-gray-300 focus:border-navy resize-none text-base"
+                        placeholder="Tell us about your requirements, challenges, or questions..."
+                      />
+                    </div>
+
+                    <Button 
+                      type="submit" 
+                      className="w-full bg-orange hover:bg-orange/90 text-white py-4 text-xl font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
+                    >
+                      <Send className="w-6 h-6 mr-3" />
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
 
             {/* Map & Additional Info */}
             <div className="space-y-10">
-              <AnimatedSection>
-                <div>
-                  <h3 className="font-heading font-bold text-3xl text-navy mb-6">Our Office Location</h3>
-                  <Card className="border-0 shadow-lg overflow-hidden">
-                    <CardContent className="p-0">
-                      <div className="h-80">
-                        <iframe
-                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.3623555076315!2d72.79165337612944!3d21.167827580500654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e8be39b6cd5%3A0x4fa0b0b1b0b1b0b1!2sBhatar%20Char%20Rasta%2C%20Surat%2C%20Gujarat%20395017!5e0!3m2!1sen!2sin!4v1635780000000!5m2!1sen!2sin"
-                          width="100%"
-                          height="320"
-                          style={{ border: 0 }}
-                          allowFullScreen
-                          loading="lazy"
-                          referrerPolicy="no-referrer-when-downgrade"
-                          title="Wealthcore Office Location"
-                        ></iframe>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection delay={200}>
-                <Card className="border-0 shadow-lg bg-gradient-to-br from-navy to-charcoal text-white">
-                  <CardContent className="p-10">
-                    <h3 className="font-heading font-bold text-2xl mb-6 flex items-center">
-                      <MessageCircle className="w-8 h-8 mr-3 text-gold" />
-                      Why Choose Wealthcore?
-                    </h3>
-                    <ul className="space-y-4 text-gray-300 text-lg">
-                      <li className="flex items-start">
-                        <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
-                        <span>15+ years of industry expertise</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
-                        <span>Trusted by 500+ satisfied clients</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
-                        <span>100% compliance track record</span>
-                      </li>
-                      <li className="flex items-start">
-                        <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
-                        <span>End-to-end financial solutions</span>
-                      </li>
-                    </ul>
+              <div>
+                <h3 className="font-heading font-bold text-3xl text-navy mb-6">Our Office Location</h3>
+                <Card className="border-0 shadow-lg overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="h-80">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.3623555076315!2d72.79165337612944!3d21.167827580500654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e8be39b6cd5%3A0x4fa0b0b1b0b1b0b1!2sBhatar%20Char%20Rasta%2C%20Surat%2C%20Gujarat%20395017!5e0!3m2!1sen!2sin!4v1635780000000!5m2!1sen!2sin"
+                        width="100%"
+                        height="320"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        title="Wealthcore Office Location"
+                      ></iframe>
+                    </div>
                   </CardContent>
                 </Card>
-              </AnimatedSection>
+              </div>
 
-              <AnimatedSection delay={300}>
-                <Card className="border-0 shadow-lg border-l-4 border-l-orange">
-                  <CardContent className="p-8">
-                    <h3 className="font-heading font-bold text-xl text-navy mb-3">Quick Response Guarantee</h3>
-                    <p className="text-charcoal text-base leading-relaxed">
-                      We understand that time is critical in business. That's why we guarantee a response to all inquiries within 24 hours during business days.
-                    </p>
-                  </CardContent>
-                </Card>
-              </AnimatedSection>
+              <Card className="border-0 shadow-lg bg-gradient-to-br from-navy to-charcoal text-white">
+                <CardContent className="p-10">
+                  <h3 className="font-heading font-bold text-2xl mb-6 flex items-center">
+                    <MessageCircle className="w-8 h-8 mr-3 text-gold" />
+                    Why Choose Wealthcore?
+                  </h3>
+                  <ul className="space-y-4 text-gray-300 text-lg">
+                    <li className="flex items-start">
+                      <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
+                      <span>15+ years of industry expertise</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
+                      <span>Trusted by 500+ satisfied clients</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
+                      <span>100% compliance track record</span>
+                    </li>
+                    <li className="flex items-start">
+                      <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
+                      <span>End-to-end financial solutions</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-lg border-l-4 border-l-orange">
+                <CardContent className="p-8">
+                  <h3 className="font-heading font-bold text-xl text-navy mb-3">Quick Response Guarantee</h3>
+                  <p className="text-charcoal text-base leading-relaxed">
+                    We understand that time is critical in business. That's why we guarantee a response to all inquiries within 24 hours during business days.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <AnimatedSection>
-        <section className="py-24 bg-gradient-to-r from-navy to-charcoal text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-8">Ready to Start Your Journey?</h2>
-            <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
-              Don't wait to optimize your business finances. Schedule a consultation today and take the first step towards strategic growth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <Button className="bg-orange hover:bg-orange/90 text-white px-10 py-4 text-xl rounded-lg transition-all duration-200 transform hover:scale-105">
-                Call Now: +91 8200310274
-              </Button>
-              <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white px-10 py-4 text-xl rounded-lg transition-all duration-200">
-                Email: Info.wealthcoreadvisory@gmail.com
-              </Button>
-            </div>
+      <section className="py-24 bg-gradient-to-r from-navy to-charcoal text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-heading font-bold text-4xl lg:text-5xl mb-8">Ready to Start Your Journey?</h2>
+          <p className="text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+            Don't wait to optimize your business finances. Schedule a consultation today and take the first step towards strategic growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <Button className="bg-orange hover:bg-orange/90 text-white px-10 py-4 text-xl rounded-lg transition-all duration-200 transform hover:scale-105">
+              Call Now: +91 8200310274
+            </Button>
+            <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-white px-10 py-4 text-xl rounded-lg transition-all duration-200">
+              Email: Info.wealthcoreadvisory@gmail.com
+            </Button>
           </div>
-        </section>
-      </AnimatedSection>
+        </div>
+      </section>
     </div>
   );
 };
