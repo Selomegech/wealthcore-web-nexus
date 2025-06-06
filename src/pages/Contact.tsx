@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -103,7 +104,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
               <Card key={index} className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <CardContent className="p-8 text-center h-full flex flex-col">
+                <CardContent className="p-10 text-center h-full flex flex-col">
                   <div className={`w-20 h-20 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <info.icon className="w-10 h-10 text-white" />
                   </div>
@@ -265,7 +266,7 @@ const Contact = () => {
                   <ul className="space-y-4 text-gray-300 text-lg">
                     <li className="flex items-start">
                       <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>
-                      <span>15+ years of industry expertise</span>
+                      <span>5+ years of industry expertise</span>
                     </li>
                     <li className="flex items-start">
                       <div className="w-3 h-3 bg-gold rounded-full mr-4 mt-2"></div>

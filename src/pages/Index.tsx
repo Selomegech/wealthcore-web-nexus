@@ -45,20 +45,34 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
+      {/* Hero Section with Video Background */}
       <AnimatedSection>
-        <section className="relative bg-gradient-to-br from-navy via-navy/95 to-charcoal text-white py-24 overflow-hidden">
-          <div 
-            className="absolute inset-0 w-full h-full object-cover" 
-            style={{
-              backgroundImage: 'url(https://www.weka.io/wp-content/uploads/files/2021/09/modern-analytic.jpg)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundRepeat: 'no-repeat'
-            }}
-          />
-          <div className="absolute inset-0 bg-navy/60"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative text-white py-24 overflow-hidden min-h-screen flex items-center">
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dewtf6jqq&public_id=7735501-hd_1920_1080_25fps_sykbmk&profile=cld-default&autoplay=true&loop=true&muted=true&controls=false"
+              width="100%"
+              height="100%"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                border: 'none'
+              }}
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
+              title="Hero Video Background"
+            ></iframe>
+          </div>
+          
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/70"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8 leading-tight">
@@ -109,7 +123,7 @@ const Index = () => {
                 <AnimatedSection key={index} delay={index * 100}>
                   <Card className="group hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border-0 bg-white cursor-pointer h-full">
                     <Link to={`/services#${service.id}`}>
-                      <CardContent className="p-8 text-center h-full flex flex-col">
+                      <CardContent className="p-10 text-center h-full flex flex-col">
                         <div className="w-20 h-20 bg-navy rounded-full flex items-center justify-center mx-auto mb-6">
                           <service.icon className="w-10 h-10 text-gold" />
                         </div>

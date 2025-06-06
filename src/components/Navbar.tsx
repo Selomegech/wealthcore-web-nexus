@@ -1,9 +1,10 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
   const navItems = [
@@ -15,9 +16,68 @@ const Navbar = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isHomePage) {
+        // On home page, check if we've scrolled past the hero section (approximately 600px)
+        setIsScrolled(window.scrollY > 600);
+      } else {
+        // On other pages, change color after minimal scroll
+        setIsScrolled(window.scrollY > 50);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHomePage]);
+
+  // Determine navbar styling based on page and scroll position
+  const getNavbarStyles = () => {
+    if (isHomePage && !isScrolled) {
+      // Home page hero section - dark/transparent navbar
+      return "bg-black/80 backdrop-blur-sm border-black/20";
+    } else {
+      // Default white navbar for other pages or when scrolled
+      return "bg-white/95 backdrop-blur-sm border-gray-200";
+    }
+  };
+
+  const getTextStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "text-white";
+    } else {
+      return "text-charcoal";
+    }
+  };
+
+  const getActiveTextStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "text-gold border-b-2 border-gold";
+    } else {
+      return "text-navy border-b-2 border-navy";
+    }
+  };
+
+  const getHoverStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "hover:text-gold";
+    } else {
+      return "hover:text-navy";
+    }
+  };
+
+  const getMobileButtonStyles = () => {
+    if (isHomePage && !isScrolled) {
+      return "text-white hover:text-gold";
+    } else {
+      return "text-charcoal hover:text-navy";
+    }
+  };
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-sm">
+    <nav className={`sticky top-0 z-50 border-b shadow-sm transition-all duration-300 ${getNavbarStyles()}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -28,7 +88,7 @@ const Navbar = () => {
               className="w-14 h-14 object-contain"
             />
             <div className="flex flex-col">
-              <span className="font-heading font-bold text-navy text-2xl">Wealthcore</span>
+              <span className={`font-heading font-bold text-2xl transition-colors duration-300 ${getTextStyles()}`}>Wealthcore</span>
             </div>
           </Link>
 
@@ -38,8 +98,8 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`text-lg font-medium transition-colors duration-200 hover:text-navy ${
-                  isActive(item.path) ? "text-navy border-b-2 border-navy" : "text-charcoal"
+                className={`text-lg font-medium transition-colors duration-200 ${
+                  isActive(item.path) ? getActiveTextStyles() : `${getTextStyles()} ${getHoverStyles()}`
                 }`}
               >
                 {item.name}
@@ -51,7 +111,7 @@ const Navbar = () => {
           <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-charcoal hover:text-navy focus:outline-none"
+              className={`focus:outline-none transition-colors duration-300 ${getMobileButtonStyles()}`}
             >
               <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path
