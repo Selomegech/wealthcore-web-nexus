@@ -47,7 +47,7 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section with Video Background */}
       <AnimatedSection>
-        <section className="relative text-white py-24 overflow-hidden min-h-screen flex items-center">
+        <section className="relative text-white py-24 overflow-hidden min-h-screen flex items-center bg-navy">
           {/* Video Background */}
           <div className="absolute inset-0 w-full h-full">
             <iframe

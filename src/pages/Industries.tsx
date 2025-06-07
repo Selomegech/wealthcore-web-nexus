@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -66,25 +65,25 @@ const Industries = () => {
 
   const clientLogos = [
     { 
-      logo: "/lovable-uploads/c264c6a5-139a-4268-afa9-805dfe825861.png"
+      logo: "/lovable-uploads/13c66609-7415-4bf9-b5ec-554eb84e468f.png"
     },
     { 
-      logo: "/lovable-uploads/e8919f4d-ce37-4b5e-a674-f9e7b06442e9.png"
+      logo: "/lovable-uploads/4dae8bfe-dd58-42e2-bc02-2ffe50021d24.png"
     },
     { 
-      logo: "/lovable-uploads/a513e7d1-b94a-4dbf-b73e-adc6fcaa8ee3.png"
+      logo: "/lovable-uploads/0fc16b64-3e12-4220-9ae3-53df248a1d9d.png"
     },
     { 
-      logo: "/lovable-uploads/db6326db-084e-4476-a534-1928feb93ea1.png"
+      logo: "/lovable-uploads/1d04c1e7-f3ee-4f43-b2ca-a2ad2c418ced.png"
     },
     { 
-      logo: "/lovable-uploads/5f6ee8c0-264f-4ba4-a35e-cbd3d479f538.png"
+      logo: "/lovable-uploads/af699bc4-9805-4396-88b3-52a00c725526.png"
     },
     { 
-      logo: "/lovable-uploads/c63c5efc-83ab-4b3e-9191-66ac23b8b581.png"
+      logo: "/lovable-uploads/8de68a8e-ac42-472b-a94d-1df8dbb2f365.png"
     },
     { 
-      logo: "/lovable-uploads/fd9b967f-8777-4b7f-bed3-a8f76bbcd3cf.png"
+      logo: "/lovable-uploads/05ef4dc8-4773-42a5-8f4f-689c6d1268a5.png"
     }
   ];
 
