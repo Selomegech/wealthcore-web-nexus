@@ -102,7 +102,7 @@ const Navbar = () => {
 
   const getLogoTextStyles = () => {
     if (isHomePage && !isScrolled) {
-      return "text-navy";
+      return "text-white";
     } else {
       return "text-navy";
     }
@@ -113,12 +113,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-3">
             <div className={`${isHomePage && !isScrolled ? 'bg-white/90 backdrop-blur-sm' : ''} rounded-lg p-1 transition-all duration-300`}>
               <img 
                 src="/lovable-uploads/c63c5efc-83ab-4b3e-9191-66ac23b8b581.png" 
                 alt="Wealthcore Logo" 
-                className="w-16 h-16 object-contain"
+                className="w-20 h-20 object-contain"
               />
             </div>
             <div className="flex flex-col">

@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -71,8 +72,8 @@ const Index = () => {
             ></iframe>
           </div>
           
-          {/* Lighter Navy Overlay */}
-          <div className="absolute inset-0 bg-navy/70"></div>
+          {/* Light Navy Overlay */}
+          <div className="absolute inset-0 bg-navy/40"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
