@@ -58,8 +58,8 @@ const Index = () => {
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
-                width: '100vw',
-                height: '100vh',
+                width: '200vw',
+                height: '130vh',
                 objectFit: 'cover',
                 transform: 'translate(-50%, -50%)',
                 border: 'none',
@@ -73,12 +73,12 @@ const Index = () => {
           </div>
           
           {/* Light Navy Overlay */}
-          <div className="absolute inset-0 bg-navy/40"></div>
+          <div className="absolute inset-0 bg-navy/50"></div>
           
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 my-4 gap-12 items-center">
               <div className="animate-fade-in">
-                <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8 leading-tight">
+                <h1 className="font-heading font-bold text-5xl lg:text-6xl mb-8 leading-tight">
                   Empowering Business Growth Through 
                   <span className="text-gold"> Strategic Financial Insights</span>
                 </h1>

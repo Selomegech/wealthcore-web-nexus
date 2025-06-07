@@ -4,64 +4,67 @@ import { Link } from "react-router-dom";
 import { Building, Factory, Heart, ShoppingCart, Zap, Users, Sun, Gem } from "lucide-react";
 
 const Industries = () => {
+  // NOTE: Images are now optimized using URL parameters.
+  // The BEST long-term solution is to download, optimize, and serve these locally.
   const industries = [
     {
       icon: Building,
       title: "Real Estate & Infrastructure",
       description: "Comprehensive financial solutions for developers, contractors, and infrastructure companies.",
       serviceLink: "project-finance",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625"
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: Factory,
       title: "Manufacturing & Export",
       description: "Specialized advisory for manufacturing companies and export-oriented businesses.",
       serviceLink: "corporate-tax",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475"
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: Heart,
       title: "Healthcare & Hospitals",
       description: "Financial expertise tailored for healthcare providers and medical institutions.",
       serviceLink: "project-finance",
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56"
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: ShoppingCart,
       title: "Trading & Distribution",
       description: "Strategic solutions for trading companies and distribution networks.",
       serviceLink: "corporate-tax",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8"
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: Zap,
       title: "Startups & MSMEs",
       description: "Growth-focused financial guidance for emerging businesses and small enterprises.",
       serviceLink: "business-consultancy",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: Users,
       title: "Professional Services",
       description: "Tailored solutions for consulting firms, law firms, and other professional service providers.",
       serviceLink: "business-consultancy",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: Sun,
       title: "Solar and Renewable Energy",
       description: "Specialized financial advisory for renewable energy projects and sustainable businesses.",
       serviceLink: "project-finance",
-      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276"
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=75&auto=format&fit=crop"
     },
     {
       icon: Gem,
       title: "Diamond and Jewellery",
       description: "Expert financial solutions for diamond merchants and jewellery manufacturers.",
       serviceLink: "corporate-tax",
-      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338"
+      image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=75&auto=format&fit=crop"
     }
   ];
+
 
   const clientLogos = [
     { 
@@ -115,6 +118,7 @@ const Industries = () => {
                     <img 
                       src={industry.image} 
                       alt={industry.title}
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-navy/60 group-hover:bg-navy/40 transition-colors duration-300"></div>
@@ -153,7 +157,7 @@ const Industries = () => {
                 <div key={index} className="flex-shrink-0 w-64 mx-8">
                   <Card className="bg-white border-0 shadow-md hover:shadow-lg transition-shadow duration-300 group">
                     <CardContent className="p-8 text-center">
-                      <div className="w-24 h-24 mx-auto mb-4 flex items-center justify-center">
+                      <div className="w-32 h-32 mx-auto mb-4 flex items-center justify-center">
                         <img 
                           src={client.logo} 
                           alt="Client Logo"

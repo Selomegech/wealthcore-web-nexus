@@ -54,7 +54,7 @@ const Footer = () => {
             <div className="space-y-3 text-base text-gray-300">
               <p>Email: Info.wealthcoreadvisory@gmail.com</p>
               <p>Phone: +91 8200310274</p>
-              <p>Address: B-113, Bhatar Trade centre, bhatar char rasta, Surat, Gujarat - 395017</p>
+              <p>Address: B-113, Bhatar Trade centre, Bhatar , Surat, Gujarat - 395017</p>
             </div>
           </div>
         </div>

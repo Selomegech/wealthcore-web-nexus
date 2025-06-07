@@ -1,5 +1,5 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useForm } from "@formspree/react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,6 +18,22 @@ const Contact = () => {
     message: ""
   });
 
+  const [state, handleSubmit] = useForm("xrbkejjb");
+
+  useEffect(() => {
+    if (state.succeeded) {
+      toast.success("Thank you for your inquiry! We'll get back to you within 24 hours.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        service: "",
+        message: ""
+      });
+    }
+  }, [state.succeeded]);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -26,25 +42,11 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    toast.success("Thank you for your inquiry! We'll get back to you within 24 hours.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      company: "",
-      service: "",
-      message: ""
-    });
-  };
-
   const contactInfo = [
     {
       icon: MapPin,
       title: "Our Address",
-      details: ["B-113, Bhatar Trade centre, bhatar char rasta", "Surat, Gujarat - 395017"],
+      details: ["B-113, Bhatar Trade centre, Bhatar ", "Surat, Gujarat - 395017"],
       color: "from-navy to-navy/80"
     },
     {
@@ -85,7 +87,7 @@ const Contact = () => {
               Let's Talk <span className="text-gold">Strategy</span>
             </h1>
             <p className="text-2xl text-gray-300 leading-relaxed">
-              Ready to take your business to the next level? Get in touch with our expert team and discover 
+              Ready to take your business to the next level? Get in touch with our expert team and discover
               how we can help optimize your financial operations and strategic planning.
             </p>
           </div>
@@ -161,7 +163,7 @@ const Contact = () => {
                         />
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label className="block text-base font-medium text-charcoal mb-3">
@@ -223,8 +225,9 @@ const Contact = () => {
                       />
                     </div>
 
-                    <Button 
-                      type="submit" 
+                    <Button
+                      type="submit"
+                      disabled={state.submitting}
                       className="w-full bg-orange hover:bg-orange/90 text-white py-4 text-xl font-medium rounded-lg transition-all duration-200 transform hover:scale-105"
                     >
                       <Send className="w-6 h-6 mr-3" />
@@ -243,7 +246,7 @@ const Contact = () => {
                   <CardContent className="p-0">
                     <div className="h-80">
                       <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.3623555076315!2d72.79165337612944!3d21.167827580500654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e8be39b6cd5%3A0x4fa0b0b1b0b1b0b1!2sBhatar%20Char%20Rasta%2C%20Surat%2C%20Gujarat%20395017!5e0!3m2!1sen!2sin!4v1635780000000!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.572115162125!2d72.86295367576562!3d21.16954848051527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fbe29738d07%3A0x333b2c019d3f18b3!2sBHATAR%20TRADE%20CENTRE!5e0!3m2!1sen!2sin!4v1717142777085!5m2!1sen!2sin"
                         width="100%"
                         height="320"
                         style={{ border: 0 }}

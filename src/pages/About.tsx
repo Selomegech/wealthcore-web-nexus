@@ -45,7 +45,7 @@ const About = () => {
       specialization: "Project Finance & Credit Facility",
       description: "CA Anmol Kedia is a finance professional with expertise in structuring and arranging financial solutions for large-scale business ventures. He guides clients through funding strategies, lender negotiations, and financial closures to ensure smooth execution of growth plans. His approach combines analytical insight with practical execution.",
       linkedin: "linkedin.com/in/anmolkedia",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+      image: "/lovable-uploads/Anmol.png"
     },
     {
       name: "CA Abhishek Jain",
