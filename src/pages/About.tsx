@@ -53,7 +53,7 @@ const About = () => {
       specialization: "Corporate Tax Planning & Advisory",
       description: "CA Abhishek Jain is a trusted advisor in corporate taxation, helping businesses navigate complex tax regulations with strategic clarity. He focuses on optimizing tax structures, ensuring compliance, and aligning tax planning with overall business objectives. His solutions are designed to drive efficiency and long-term value.",
       linkedin: "linkedin.com/in/caabhishekjain001",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
+      image: "/lovable-uploads/beb5c488-eb51-4be7-b500-f8a5669dfabd.png"
     },
     {
       name: "CA Rushab Khaitan",
@@ -61,7 +61,7 @@ const About = () => {
       specialization: "Internal Audit & Compliance",
       description: "CA Rushab Khaitan is a specialist in strengthening internal controls and ensuring regulatory compliance across business functions. He helps organizations identify operational risks, enhance process efficiency, and maintain accountability through structured audit practices. His work supports robust governance and sustained business integrity.",
       linkedin: "linkedin.com/in/carushabkhaitan",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
+      image: "/lovable-uploads/73c525c8-8fdd-4808-b15e-618fc74a0f5f.png"
     }
   ];
 

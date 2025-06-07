@@ -78,7 +78,7 @@ const Navbar = () => {
 
   const getMobileMenuStyles = () => {
     if (isHomePage && !isScrolled) {
-      return "bg-black/90 backdrop-blur-sm border-t border-gray-600";
+      return "bg-navy/95 backdrop-blur-sm border-t border-gray-600";
     } else {
       return "bg-white border-t border-gray-200";
     }
