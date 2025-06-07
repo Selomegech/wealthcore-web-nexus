@@ -194,11 +194,11 @@ const Industries = () => {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-8 transform hover:scale-105 transition-transform duration-300">
+              <Card className="bg-gradient-to-br from-navy to-navy/80 text-white p-8 transform hover:scale-105 transition-transform duration-300 h-48 flex flex-col justify-center">
                 <h3 className="font-bold text-3xl text-gold mb-3">500+</h3>
                 <p className="text-base">Clients</p>
               </Card>
-              <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-8 transform hover:scale-105 transition-transform duration-300 mt-8">
+              <Card className="bg-gradient-to-br from-gold to-gold/80 text-white p-8 transform hover:scale-105 transition-transform duration-300 h-48 flex flex-col justify-center">
                 <h3 className="font-bold text-3xl mb-3">5+</h3>
                 <p className="text-base">Years Experience</p>
               </Card>

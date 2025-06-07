@@ -103,15 +103,15 @@ const Contact = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-full">
-                <CardContent className="p-10 text-center h-full flex flex-col">
+              <Card key={index} className="group border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 h-80">
+                <CardContent className="p-10 text-center h-full flex flex-col justify-between">
                   <div className={`w-20 h-20 bg-gradient-to-br ${info.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <info.icon className="w-10 h-10 text-white" />
                   </div>
                   <h3 className="font-heading font-bold text-xl text-navy mb-4">{info.title}</h3>
                   <div className="space-y-2 flex-1 flex flex-col justify-center">
                     {info.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-charcoal text-base">{detail}</p>
+                      <p key={detailIndex} className="text-charcoal text-sm break-words">{detail}</p>
                     ))}
                   </div>
                 </CardContent>

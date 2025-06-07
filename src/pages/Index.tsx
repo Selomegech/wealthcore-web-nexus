@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -47,21 +46,24 @@ const Index = () => {
     <div className="min-h-screen">
       {/* Hero Section with Video Background */}
       <AnimatedSection>
-        <section className="relative text-white py-24 overflow-hidden min-h-screen flex items-center">
+        <section className="relative text-white overflow-hidden min-h-screen flex items-center">
           {/* Video Background */}
           <div className="absolute inset-0 w-full h-full">
             <iframe
-              src="https://player.cloudinary.com/embed/?cloud_name=dewtf6jqq&public_id=7735501-hd_1920_1080_25fps_sykbmk&profile=cld-default&autoplay=true&loop=true&muted=true&controls=false"
+              src="https://player.cloudinary.com/embed/?cloud_name=dewtf6jqq&public_id=7735501-hd_1920_1080_25fps_sykbmk&profile=cld-default&autoplay=true&loop=true&muted=true&controls=false&start=0&end=7"
               width="100%"
               height="100%"
               style={{
                 position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
+                top: '50%',
+                left: '50%',
+                width: '100vw',
+                height: '100vh',
                 objectFit: 'cover',
-                border: 'none'
+                transform: 'translate(-50%, -50%)',
+                border: 'none',
+                minWidth: '100%',
+                minHeight: '100%'
               }}
               allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
               allowFullScreen
@@ -69,10 +71,10 @@ const Index = () => {
             ></iframe>
           </div>
           
-          {/* Navy Overlay */}
-          <div className="absolute inset-0 bg-navy/90"></div>
+          {/* Lighter Navy Overlay */}
+          <div className="absolute inset-0 bg-navy/70"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in">
                 <h1 className="font-heading font-bold text-5xl lg:text-7xl mb-8 leading-tight">
@@ -92,20 +94,6 @@ const Index = () => {
                   </Button>
                 </div>
               </div>
-              {/* Commented out Strategic Excellence section */}
-              {/* 
-              <div className="relative animate-float">
-                <div className="w-full h-96 bg-gradient-to-br from-gold/20 to-transparent rounded-2xl backdrop-blur-sm border border-gold/30 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-28 h-28 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
-                      <TrendingUp className="w-14 h-14 text-white" />
-                    </div>
-                    <h3 className="font-heading font-bold text-3xl mb-3">Strategic Excellence</h3>
-                    <p className="text-gray-300 text-lg">Driving business success through expert financial advisory</p>
-                  </div>
-                </div>
-              </div>
-              */}
             </div>
           </div>
         </section>
