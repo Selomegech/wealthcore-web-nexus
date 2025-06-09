@@ -34,6 +34,11 @@ const Contact = () => {
     }
   }, [state.succeeded]);
 
+  const apiKey = "AIzaSyDssB7MLoUIBbB71PP7xoNB_8DK1RTCu7g"; 
+  const location = "Bhatar Trade Centrer india"; 
+  
+  const mapSrc = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(location)}`;
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -243,21 +248,21 @@ const Contact = () => {
               <div>
                 <h3 className="font-heading font-bold text-3xl text-navy mb-6">Our Office Location</h3>
                 <Card className="border-0 shadow-lg overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="h-80">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3720.572115162125!2d72.86295367576562!3d21.16954848051527!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fbe29738d07%3A0x333b2c019d3f18b3!2sBHATAR%20TRADE%20CENTRE!5e0!3m2!1sen!2sin!4v1717142777085!5m2!1sen!2sin"
-                        width="100%"
-                        height="320"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Wealthcore Office Location"
-                      ></iframe>
-                    </div>
-                  </CardContent>
-                </Card>
+      <CardContent className="p-0">
+        <div className="h-80">
+          <iframe
+            src={mapSrc}
+            width="100%"
+            height="320"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Wealthcore Office Location"
+          ></iframe>
+        </div>
+      </CardContent>
+    </Card>
               </div>
 
               <Card className="border-0 shadow-lg bg-gradient-to-br from-navy to-charcoal text-white">
